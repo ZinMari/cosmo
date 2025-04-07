@@ -2,26 +2,31 @@ import styles from '../styles/home.module.scss';
 import cl from 'classnames'
 
 import {Logo} from '../components/Logo';
+import {SocialNetworks} from '../components/SocialNetworks';
+import {Button} from '../components/Button';
+import {Navigation} from '../components/Navigation';
+import {Title} from '../components/Title';
 
 export default function Home() {
   return (
     <div>
       <section className={cl(styles.section, styles.sectionMain)}>
-        <header>
-        <Logo/>
-        {/* <SocialNetworks/>
-        <Button onClick={()=>{}}>
-          Whitepaper
-        </Button> */}
+        <header
+          className={styles.header}
+        >
+          <Logo/>
+          <SocialNetworks/>
+          <Button onClick={()=>{}}>
+            Whitepaper
+          </Button>
         </header>
-        {/* <Navigation/>
+        {/* <Navigation/> */}
         <div>
-          <Title 
-            type='h2'
-          >
-            from dusk to dawn
+          <Title>
+            from dusk to&nbsp;dawn
           </Title>
-          <ul>
+          <ul className={styles.buttonList}
+          >
             <li>
             <Button onClick={()=>{}}>
               Mint
@@ -33,7 +38,7 @@ export default function Home() {
               </Button>
             </li>
           </ul>
-        </div> */}
+        </div>
       </section>
     </div>
   );
