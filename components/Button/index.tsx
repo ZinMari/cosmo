@@ -15,7 +15,9 @@ export const Button: React.FC<ButtonProps> = ({
             className={styles.button}
             onClick={onClick}
         >
-            {children}
-            </button>
+            <span>
+                {children}
+            </span>
+        </button>
     );
 }
