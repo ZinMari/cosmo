@@ -20,7 +20,7 @@ export default function Home() {
             Whitepaper
           </Button>
         </header>
-        {/* <Navigation/> */}
+        <Navigation/>
         <div>
           <Title>
             from dusk to&nbsp;dawn
