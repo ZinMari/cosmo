@@ -1,0 +1,45 @@
+.artMenu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+    position: relative;
+
+    &Card {
+        margin-top: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+        opacity: 0;
+    }
+
+    &Item {
+        display: block;
+        color: white;
+        text-decoration: none;
+        text-align: right;
+        font-family: "TTOctosquares", sans-serif;
+        padding-right: 3.8rem;
+        position: relative;
+        z-index: 1;
+
+        &:visited,
+        &:hover {
+            color: white;
+        }
+    }
+
+    &ItemActive {
+        .artMenuTitle {
+            text-transform: uppercase;
+        }
+        .artMenuCard{
+            opacity: 1;
+            height: 13.3571rem;
+            margin-top: 1.2rem;
+        }
+    }
+}
+
+.cardMire {
+
+}
