@@ -5,7 +5,7 @@ import cl from 'classnames'
 
 import styles from './style.module.scss'
 
-import { ArtButton } from '../ArtButton';
+import { ArtButton, TypeArtButton } from '../ArtButton';
 
 interface ArtMenuItemProps {
     id: number;
@@ -16,6 +16,22 @@ interface ArtMenuItemProps {
     onClick: (event: React.MouseEvent)=>void;
 }
 
+const getTypeById = (id:number):TypeArtButton => {
+    if(id === 1) {
+      return 'YellowPink'
+    }
+
+    if(id === 2) {
+      return 'Blue'
+    }
+
+    if(id === 3) {
+      return 'BluePurple'
+    }
+
+    return 'GreenYellow'
+}
+
 export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
   id,
   href,
@@ -24,8 +40,8 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
   isOpened,
   onClick
 }) => {
-  console.log(isOpened)
-    return (<Link   
+    return (
+    <Link   
         href={href}
         onClick={onClick}
         className={cl(styles.artMenuItem, isOpened && styles.artMenuItemActive)}
@@ -36,6 +52,7 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
           styles.artMenuCard
         )}>
             <ArtButton
+                type={getTypeById(id)}
                 onClick={()=>{}}
                 className={styles.cardMoreButton}
             >
@@ -49,5 +66,6 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
                 height="184"
            />
         </div>
+        <span className={styles.artMenuDecorator}/>
     </Link>)
 };
