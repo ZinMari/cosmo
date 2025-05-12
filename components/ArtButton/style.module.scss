@@ -167,4 +167,40 @@ $size-border: 2px;
             background: linear-gradient(135deg, #f9db88 0%,#fdf2d1 22%,#fdf2d1 22%,#f5c2c8 79%,#f8dbde 100%) !important;
         }
     }
+
+    &Transparent {
+        color: white;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    &Transparent {
+        color: white;
+
+        &:hover {
+            opacity: 0.7;
+
+            .artButtonText {
+                color: white;
+            }
+        
+            &::after {
+                background: none;
+            }
+        }
+    }
+
+    &White {
+        color: black;
+
+        &::after {
+            background: white;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
 }
