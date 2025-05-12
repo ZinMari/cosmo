@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image';
 
 import cl from 'classnames'
@@ -14,6 +13,7 @@ interface ArtMenuItemProps {
     title: string;
     isOpened: boolean;
     onClick: (event: React.MouseEvent)=>void;
+    onClickButton: ()=> void;
 }
 
 const getTypeById = (id:number):TypeArtButton => {
@@ -34,15 +34,14 @@ const getTypeById = (id:number):TypeArtButton => {
 
 export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
   id,
-  href,
   image,
   title,
   isOpened,
-  onClick
+  onClick,
+  onClickButton
 }) => {
     return (
-    <Link   
-        href={href}
+    <div
         onClick={onClick}
         className={cl(styles.artMenuItem, isOpened && styles.artMenuItemActive)}
     >
@@ -53,7 +52,7 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
         )}>
             <ArtButton
                 type={getTypeById(id)}
-                onClick={()=>{}}
+                onClick={onClickButton}
                 className={styles.cardMoreButton}
             >
                 More
@@ -67,5 +66,5 @@ export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
            />
         </div>
         <span className={styles.artMenuDecorator}/>
-    </Link>)
+    </div>)
 };
