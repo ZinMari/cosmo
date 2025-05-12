@@ -292,6 +292,7 @@ export const ArtMenu: React.FC<ArtMenuProps> = () => {
 										modalInfo.listImages.map((item, id) => (
 											<GlassCard
 												key={id}
+                                                imgNumber={id+1}
 												type={item.type}
 												imageUrl={item.src}
 											/>

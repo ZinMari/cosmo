@@ -126,9 +126,6 @@
 .cardList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0px 40px;
-
-    *:nth-child(2n) {
-        margin-top: 40px;
-    }
+    grid-template-rows: repeat(7, 90px);
+    gap: 30px;
 }
