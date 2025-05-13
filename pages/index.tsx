@@ -9,10 +9,11 @@ import {Title} from '../components/Title';
 import { ArtMenu } from '@/components/ArtMenu';
 import { ArtTitle } from '@/components/ArtTitle';
 import { AnimatedMenu } from '@/components/AnimatedMenu';
+import { LogoList } from '@/components/LogoList';
 
 export default function Home() {
   return (
-    <div>
+    <article>
       <section className={cl(styles.section, styles.sectionMain)}>
         <header
           className={styles.header}
@@ -50,7 +51,7 @@ export default function Home() {
         <ArtMenu></ArtMenu>
       </section>
       <section className={cl(styles.section, styles.sectionAnimation)}>
-        <ArtTitle type='down' className={styles.artTitle}>Our way</ArtTitle>
+        <ArtTitle type='up' className={styles.artTitle}>Our way</ArtTitle>
         <Title size='Small' className={styles.smallTitle}>
           Road
           <svg width="39" height="39" viewBox="0 0 39 39" fill="none">
@@ -60,6 +61,11 @@ export default function Home() {
         </Title>
         <AnimatedMenu />
       </section>
-    </div>
+      <section className={cl(styles.section, styles.sectionLogos)}>
+        <ArtTitle type='down' className={styles.artTitle}>Partners</ArtTitle>
+        <Title size='Small' className={styles.subTitle}>COLLABORATIONS</Title>
+        <LogoList className={styles.logoList}/>
+      </section>
+    </article>
   );
 }

@@ -55,6 +55,26 @@
             background: linear-gradient(to top,  rgb(34, 35, 49) 0%,rgba(34, 35, 49,0) 100%);
         }
     }
+
+    &Logos {
+        min-height: auto;
+        height: auto;
+        background: linear-gradient(
+            to bottom,  
+            #633e60 0%,
+            #705451 50%,
+            #32344B 100%
+        );
+    }
+
+    &DifficultForms {
+        background: linear-gradient(
+            to bottom,
+            #32344B 0%,
+            #4B3961 50%,
+            #4D2A32 100%
+        );
+    }
 }
 
 .header {
@@ -82,4 +102,13 @@
 
 .smallTitle {
     margin-bottom: 1em;
+}
+
+.subTitle {
+    margin-bottom: 50px!important;
+    text-align: center;
+}
+
+.logoList {
+    margin-bottom: 100px;
 }
