@@ -67,13 +67,32 @@
         );
     }
 
-    &DifficultForms {
+    &Questions {
         background: linear-gradient(
             to bottom,
             #32344B 0%,
             #4B3961 50%,
             #4D2A32 100%
         );
+        position: relative;
+        height: auto;
+        min-height: auto;
+        padding-bottom: 15rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('/bg/screen_art_object.png') center top no-repeat;
+            background-size: 100% auto;
+            z-index: 1;
+            opacity: .7;
+        }
+    }
+
+    &Content {
+        position: relative;
+        z-index: 2;
     }
 }
 
@@ -111,4 +130,10 @@
 
 .logoList {
     margin-bottom: 100px;
+}
+
+.questionStar {
+    padding: 0 18px 0 11px;
+    position: relative;
+    top: 4px;
 }
