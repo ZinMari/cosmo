@@ -55,20 +55,23 @@ export const AnimatedMenu: React.FC<AnimatedMenuProps> = ({
             <div className={cl(styles.animatedMenu, className)}>
                 {
                     items.map((item, index) => (
-                        <div
-                            key={item.id}
-                            className={cl(
-                                styles.animatedMenuItem,
-                                activeItem === index && styles.animatedMenuItemActive,
-                                activeItem === 0 && styles.animatedMenuItemPink
-                            )}
-                            onClick={()=>setActiveItem(index)}
+                        <div 
+                            key={item.id} 
+                            className={cl(styles.animatedMenuItem, activeItem === index && styles.animatedMenuItemActive)}
                         >
-                            <div className={styles.animatedMenuItemContent}>
-                                <span className={styles.animatedMenuItemNumber}>{item.id}</span>
-                                <h4 className={styles.animatedMenuItemTitle}>{item.title}</h4>
-                                {item.text && (<p className={styles.animatedMenuItemText}>{item.text}</p>)}
-                                <span className={styles.animatedMenuDecorator}/>
+                            <span className={styles.animatedMenuDecor} onClick={()=>setActiveItem(index)}/>
+                            <div
+                                className={cl(
+                                styles.animatedMenuWrap,
+                                activeItem === 0 && styles.animatedMenuWrapPink
+                                )}
+                                onClick={()=>setActiveItem(index)}
+                            >
+                                <div className={styles.animatedMenuContent}>
+                                    <span className={styles.animatedMenuNumber}>{item.id}</span>
+                                    <h4 className={styles.animatedMenuTitle}>{item.title}</h4>
+                                    {item.text && (<p className={styles.animatedMenuText}>{item.text}</p>)}
+                                </div>
                             </div>
                         </div>
                     ))

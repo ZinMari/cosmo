@@ -6,8 +6,103 @@ $size-border: 2px;
 .animatedMenu {
     position: relative;
     z-index: 2;
+    padding-left: 85px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 147px;
+        left: 0;
+        bottom: 100px;
+        width: 5px;
+        background-color: #fff;
+    }
 
     &Item {
+        display: inline-flex;
+        position: relative;
+
+        &:nth-child(odd){
+            .animatedMenuDecor {
+                background-image: url("/decor/white_right_border.png");
+            }
+        }
+
+        &:hover {
+            .animatedMenuDecor {
+                    background-image: url("/decor/color_left_border.png");
+            }
+
+            &:nth-child(odd) {
+                .animatedMenuDecor {
+                    background-image: url("/decor/color_right_border.png");
+            }
+            }
+        }
+
+        &Active {
+            .animatedMenuDecor {
+                background-image: url("/decor/color_left_border.png");
+                transform: scale(1);
+            }
+
+            &:nth-child(odd){
+                .animatedMenuDecor {
+                    background-image: url("/decor/color_right_border.png");
+                }
+            }
+
+            .animatedMenuWrap {
+                color: black;
+                transform: scale(1.05);
+                transform-origin: 0 0;
+    
+                &::after {
+                    background: linear-gradient(
+                        45deg,
+                        rgba(255,255,255,1) 0%,
+                        rgba(255,255,255,1) 35%,
+                        #58B9FF 71%,
+                        #4BB7AA 89%
+                    );
+                }
+    
+                &:nth-child(1) {
+    
+                    &::after {
+                        background: linear-gradient(
+                            45deg,
+                            rgba(255,255,255,1) 0%,
+                            rgba(255,255,255,1) 35%,
+                            rgba(241,163,71,1) 71%,
+                            rgba(255,114,224,1) 89%
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    &Decor {
+        position: absolute;
+        top: 50%;
+        transition: all .3s;
+        transform: translateY(-50%) scale(1.1);
+        left: -112px;
+        display: inline-block;
+        width: 60px;
+        height: 95px;
+        background-image: url("/decor/white_left_border.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 5;
+
+        &Active {
+            background-image: url("/decor/color_left_border.png");
+        }        
+    }
+
+    &Wrap {
         position: relative;
         width: 35vw;
         padding: 4rem 3rem;
@@ -49,59 +144,28 @@ $size-border: 2px;
                 rgba(255,255,255,0) 100%
             );
         }
-
-        &Active {
-            color: black;
-            transform: scale(1.05);
-            transform-origin: 0 0;
-
-            &::after {
-                background: linear-gradient(
-                    45deg,
-                    rgba(255,255,255,1) 0%,
-                    rgba(255,255,255,1) 35%,
-                    #58B9FF 71%,
-                    #4BB7AA 89%
-                );
-            }
-
-            &:nth-child(1) {
-
-                &::after {
-                    background: linear-gradient(
-                        45deg,
-                        rgba(255,255,255,1) 0%,
-                        rgba(255,255,255,1) 35%,
-                        rgba(241,163,71,1) 71%,
-                        rgba(255,114,224,1) 89%
-                    );
-                }
-            }
-        }
-
-        &Content {
-            position: relative;
-            z-index: 2;
-        }
-
-        &Number {
-            display: block;
-            font: 700 41px/1 "NeueMachina";
-            margin-bottom: 10px;
-        }
-
-        &Title {
-            font: 700 13px/1.2 "MazzardH";
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        &Text {
-            font: 700 13px/1.2 "MazzardH";
-        }
     }
 
-    
+    &Content {
+        position: relative;
+        z-index: 2;
+    }
+
+    &Number {
+        display: block;
+        font: 700 41px/1 "NeueMachina";
+        margin-bottom: 10px;
+    }
+
+    &Title {
+        font: 700 13px/1.2 "MazzardH";
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &Text {
+        font: 700 13px/1.2 "MazzardH";
+    }
 }
 
 .animatedImages {
