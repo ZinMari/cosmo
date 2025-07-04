@@ -44,23 +44,23 @@
         }
 
         .artMenuDecorator {
-            background-image: url("./images/white_left_border.png");
+            background-image: url("/decor/white_left_border.png");
         }
 
         &:hover {
             .artMenuDecorator {
-                background-image: url("./images/color_left_border.png");
+                background-image: url("/decor/color_left_border.png");
             }
         }
 
         &:nth-child(odd){
             .artMenuDecorator {
-                background-image: url("./images/white_right_border.png");
+                background-image: url("/decor/white_right_border.png");
             }
     
             &:hover {
                 .artMenuDecorator {
-                    background-image: url("./images/color_right_border.png");
+                    background-image: url("/decor/color_right_border.png");
                 }
             }
         }
@@ -83,14 +83,15 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        cursor: pointer;
     }
 
     &ItemActive {
         .artMenuDecorator {
-            background-image: url("./images/color_left_border.png");
+            background-image: url("/decor/color_left_border.png");
 
             &:nth-child(odd){
-                background-image: url("./images/color_right_border.png");
+                background-image: url("/decor/color_right_border.png");
             }
         }
         .artMenuTitle {
