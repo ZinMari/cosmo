@@ -18,7 +18,7 @@ export const CardMore: React.FC<CardMoreProps> = (
     return (
         <div className={styles.cardMore}>
             <ArtButton 
-                type="Yellow"
+                type="YellowPink"
                 onClick={onClick}
                 className={styles.cardMoreButton}
             >

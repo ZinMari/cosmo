@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import cl from 'classnames';
 
 import styles from './style.module.scss';
@@ -97,7 +98,12 @@ export const AlliesGallery: React.FC<AlliesGalleryProps> = ({
                     >
                         <div className={styles.alliesItemContainer}>
                             <div className={styles.alliesImageContainer}>
-                                <img className={styles.alliesImage} src={item.imageUrl}/>
+                                <Image
+                                    src={item.imageUrl}
+                                    className={styles.alliesImage}
+                                    alt={item.title}
+                                    fill={true}
+                                />
                             </div>
                             <div className={styles.alliesPosition}>
                                 {item.position}
@@ -118,10 +124,12 @@ export const AlliesGallery: React.FC<AlliesGalleryProps> = ({
                     </div>
                 ))}
             </div>
-            <img 
+            <Image
                 className={styles.dragDragDrag}
                 src="/alliesGallery/drag_drag_drag.png" 
                 alt="Drag Drag Drag"
+                width={300}
+                height={300}
             />
         </div>
     )
