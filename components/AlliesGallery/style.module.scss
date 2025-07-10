@@ -18,6 +18,7 @@ $size-border: 2px;
         gap: 30px;
         scrollbar-width: none;
         scroll-snap-type: x mandatory;
+        padding-left: 30px;
         margin-right: -6.8571rem;
         align-items: flex-start;
 
@@ -39,13 +40,13 @@ $size-border: 2px;
         scroll-snap-align: start;
         scroll-snap-stop: always;
         cursor: pointer;
-        transition: .2s;
+        transition: all 0.2s;
         font-size: 14px;
 
         &Container {
             position: relative;
             z-index: 2;
-        }
+        }        
 
         &::after {
             content: '';
@@ -74,8 +75,9 @@ $size-border: 2px;
             rgba(255, 255, 255, 0.5) 20%,
             rgba(255, 255, 255, 0.2) 100%);
             backdrop-filter: blur(5px);
+            transition: all 0.3s;
         }
-    
+
         &Active {
             &::after {
                 background: linear-gradient(-135deg,
@@ -83,7 +85,7 @@ $size-border: 2px;
                 rgba(231, 143, 129, 1) 5%,
                 rgba(255, 255, 255, 1) 20%,
                 rgba(255, 255, 255, 1) 100%);
-    
+
                 clip-path: polygon(
                     0 0,
                     $size-top-large 0,
@@ -96,7 +98,7 @@ $size-border: 2px;
                     0 100%,
                 );
             }
-    
+
             width: 35%;
             min-width: 35%;
             color: black;
@@ -120,22 +122,27 @@ $size-border: 2px;
         object-fit: fill;
     }
 
+    &Position {
+        font: 400 0.9em/1.2 'MazzardH';
+        margin-bottom: 4px;
+    }
+
     &Title {
         font: 400 1.3em/1 'TTOctosquares', sans-serif;
         text-transform: uppercase;
     }
 
     &Description {
-        opacity: 1;
+        opacity: 0;
         position: absolute;
         bottom: 0;
         color: white;
         padding: 35px 50px 40px;
-        transition: transform .3s, opacity .3s;
-        // transform: scale(0);
-        width: 35vw;
+        transition: transform 0.3s, opacity 0.3s;
+        transform: scaleX(0);
+        width: 30vw;
         transform-origin: 0 center;
-        right: -40vw;
+        right: -35vw;
 
         strong {
             font-weight: bold;
@@ -147,7 +154,66 @@ $size-border: 2px;
             right: 10%;
             z-index: 2;
         }
-    }    
+    }
+}
+
+.alliesItemActive {
+    .alliesDescription {
+        opacity: 1;
+        position: absolute;
+        bottom: $size-height;
+        z-index: 0;
+        transform: scaleX(1);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, rgb(244, 187, 66, 0.3) 0%,rgb(245, 189, 196, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            clip-path: polygon(
+                0 0,
+                0 100%,
+                calc(100% - 40px) 100%,
+                100% calc(100% - 40px),
+                100% 0,
+            );
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(to left, rgb(244, 187, 66, 1) 0%,rgb(245, 189, 196,1) 100%);
+            clip-path: polygon(
+                0 0,
+                0 100%,
+                calc(100% - 40px) 100%,
+                100% calc(100% - 40px),
+                100% 0,
+
+                calc(100% - 2px) -2px,
+                calc(100% - 2px) calc(100% - 40px - 1px),
+                calc(100% - 40px - 1px) calc(100% - 2px),
+                2px calc(100% - 2px),
+                2px 2px,
+                calc(100% + 2px) 2px,
+                100% 0,
+            );
+        }
+
+        p {
+            position: relative;
+            z-index: 1;
+        }
+    }
 }
 
 .dragDragDrag {
