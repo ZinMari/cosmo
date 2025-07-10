@@ -1,7 +1,6 @@
 import styles from './style.module.scss'
 import cl from 'classnames'
 
-interface SocialNetworksProps {}
 
 const socialNetworks = [
     {
@@ -24,7 +23,7 @@ const socialNetworks = [
     },
 ]
 
-export const SocialNetworks: React.FC<SocialNetworksProps> = ({}) => {
+export const SocialNetworks: React.FC = ({}) => {
     return (
         <ul className={styles.socialNetworks}>
             {socialNetworks.map((socialNetwork) => (

@@ -3,9 +3,6 @@ import cl from 'classnames'
 import styles from './style.module.scss'
 import {Fragment} from 'react';
 
-interface NavigationProps {
-}
-
 const links = [
     {
         id: 1,
@@ -27,7 +24,7 @@ const links = [
     },
 ]
 
-export const Navigation: React.FC<NavigationProps> = () => {
+export const Navigation: React.FC = () => {
     return (
         <nav className={styles.navigation}>
             {links.map((link, id) => (

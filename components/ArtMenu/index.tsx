@@ -4,9 +4,6 @@ import { useState, ReactNode, useMemo } from 'react'
 import { Modal } from '../Modal';
 import { GlassCard } from '../GlassCard';
 
-interface ArtMenuProps {
-}
-
 interface ModalInfo {
     title: string;
     titleUrl: string;
@@ -240,7 +237,7 @@ const links: ArtMenuLinks[] = [
     }
 ];
 
-export const ArtMenu: React.FC<ArtMenuProps> = () => {
+export const ArtMenu: React.FC = () => {
     const [openedId, setOpenedId] = useState(0);
 	const [modalInfo, setModalInfo] = useState<ModalInfo | null>(null);
 

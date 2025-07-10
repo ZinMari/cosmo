@@ -2,6 +2,7 @@ import cl from 'classnames';
 
 import styles from './style.module.scss'
 import React from 'react';
+import Image from 'next/image';
 
 interface GlassCardProps {
     imageUrl: string;
@@ -17,7 +18,9 @@ export const GlassCard: React.FC<GlassCardProps> = ({
     console.log(imgNumber)
     return (
         <div className={cl(styles.classCard, styles[type], styles[`classCard__item${imgNumber}`])}>
-        <img src={imageUrl} alt='Card' className={styles.classCardImage}/>
+        <Image
+            src={imageUrl} alt='Card' className={styles.classCardImage} fill={true}
+        />
     </div>
     )
 }
