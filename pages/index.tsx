@@ -1,11 +1,11 @@
-import styles from '../styles/home.module.scss';
+import styles from '@/styles/home.module.scss';
 import cl from 'classnames'
 
-import {Logo} from '../components/Logo';
-import {SocialNetworks} from '../components/SocialNetworks';
-import {ArtButton} from '../components/ArtButton';
-import {Navigation} from '../components/Navigation';
-import {Title} from '../components/Title';
+import {Logo} from '@/components/Logo';
+import {SocialNetworks} from '@/components/SocialNetworks';
+import {ArtButton} from '@/components/ArtButton';
+import {Navigation} from '@/components/Navigation';
+import {Title} from '@/components/Title';
 import { ArtMenu } from '@/components/ArtMenu';
 import { ArtTitle } from '@/components/ArtTitle';
 import { AnimatedMenu } from '@/components/AnimatedMenu';
