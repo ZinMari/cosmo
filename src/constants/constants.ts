@@ -6,6 +6,13 @@ interface GalleryItem {
   imageUrl: string;
 }
 
+interface AnimatedMenuItem {
+  id: string;
+  title: string;
+  text?: string;
+  imageUrl: string;
+}
+
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 1,
@@ -78,5 +85,37 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "<strong>@ItsCuzzo</strong> is the set of brains behind Dusktopia's smart contracts. He’s interested in all things Web3 and has worked with other major NFT projects in development, advisory and contract audit roles. Cuzzo’s considerable expertise will ensure that our technical back-end is top notch.",
     imageUrl: "/gallery/itscuzzo.jpg",
+  },
+];
+
+export const ANIMATED_MENU_ITEMS: AnimatedMenuItem[] = [
+  {
+    id: "01",
+    title: "Genesis lands drop",
+    text: "An original collection of 5,555 land plots will be made ready for the very first Dusktopian adventurers.",
+    imageUrl: "/animatedMenu/01.png",
+  },
+  {
+    id: "02",
+    title: "Staking goes live",
+    text: "The EON Corporation Superbank begins rewarding Dusktopians staking their land plots with $DAWN.",
+    imageUrl: "/animatedMenu/02.png",
+  },
+  {
+    id: "03",
+    title: "New worlds emerge",
+    text: "Claim a slice of our secret land collection with $DAWN. Outfit your existing land with new properties and accessories.",
+    imageUrl: "/animatedMenu/03.png",
+  },
+  {
+    id: "04",
+    title: "Avatar collection drop",
+    text: "Get the PFP avatars you will use for in-universe interaction, synergized with your asset holdings.",
+    imageUrl: "/animatedMenu/04.png",
+  },
+  {
+    id: "05",
+    title: "Let's the game begin",
+    imageUrl: "/animatedMenu/05.png",
   },
 ];

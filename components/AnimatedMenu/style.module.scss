@@ -4,186 +4,185 @@ $size-bottom: 7rem;
 $size-border: 2px;
 
 .animatedMenu {
+  position: relative;
+  z-index: 2;
+  padding-left: 85px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 147px;
+    left: 0;
+    bottom: 100px;
+    width: 5px;
+    background-color: #fff;
+  }
+
+  &__item {
+    display: inline-flex;
     position: relative;
-    z-index: 2;
-    padding-left: 85px;
 
-    &::after {
-        position: absolute;
-        content: "";
-        top: 147px;
-        left: 0;
-        bottom: 100px;
-        width: 5px;
-        background-color: #fff;
+    &:nth-child(odd) {
+      .animatedMenuDecor {
+        background-image: url("/decor/white_right_border.png");
+      }
     }
 
-    &Item {
-        display: inline-flex;
-        position: relative;
+    &:hover {
+      .animatedMenuDecor {
+        background-image: url("/decor/color_left_border.png");
+      }
 
-        &:nth-child(odd){
-            .animatedMenuDecor {
-                background-image: url("/decor/white_right_border.png");
-            }
+      &:nth-child(odd) {
+        .animatedMenuDecor {
+          background-image: url("/decor/color_right_border.png");
         }
-
-        &:hover {
-            .animatedMenuDecor {
-                    background-image: url("/decor/color_left_border.png");
-            }
-
-            &:nth-child(odd) {
-                .animatedMenuDecor {
-                    background-image: url("/decor/color_right_border.png");
-            }
-            }
-        }
-
-        &Active {
-            .animatedMenuDecor {
-                background-image: url("/decor/color_left_border.png");
-                transform: scale(1);
-            }
-
-            &:nth-child(odd){
-                .animatedMenuDecor {
-                    background-image: url("/decor/color_right_border.png");
-                }
-            }
-
-            .animatedMenuWrap {
-                color: black;
-                transform: scale(1.05);
-                transform-origin: 0 0;
-    
-                &::after {
-                    background: linear-gradient(
-                        45deg,
-                        rgba(255,255,255,1) 0%,
-                        rgba(255,255,255,1) 35%,
-                        #58B9FF 71%,
-                        #4BB7AA 89%
-                    );
-                }
-    
-                &:nth-child(1) {
-    
-                    &::after {
-                        background: linear-gradient(
-                            45deg,
-                            rgba(255,255,255,1) 0%,
-                            rgba(255,255,255,1) 35%,
-                            rgba(241,163,71,1) 71%,
-                            rgba(255,114,224,1) 89%
-                        );
-                    }
-                }
-            }
-        }
+      }
     }
 
-    &Decor {
-        position: absolute;
-        top: 50%;
-        transition: all .3s;
-        transform: translateY(-50%) scale(1.1);
-        left: -112px;
-        display: inline-block;
-        width: 60px;
-        height: 95px;
-        background-image: url("/decor/white_left_border.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        z-index: 5;
+    &_active {
+      .animatedMenu__decor {
+        background-image: url("/decor/color_left_border.png");
+        transform: scale(1);
+      }
 
-        &Active {
-            background-image: url("/decor/color_left_border.png");
-        }        
-    }
+      &:nth-child(odd) {
+        .animatedMenu__decor {
+          background-image: url("/decor/color_right_border.png");
+        }
+      }
 
-    &Wrap {
-        position: relative;
-        width: 35vw;
-        padding: 4rem 3rem;
-        margin-bottom: 50px;
-        cursor: pointer;
-        transition: transform 0.3s;
+      .animatedMenu__itemWrap {
+        color: black;
+        transform: scale(1.05);
+        transform-origin: 0 0;
 
         &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            display: block;
-            z-index: 0;
-            transition: .3s;
-            clip-path: polygon(
-                0 0,
-                $size-top 0,
-                $size-bottom $size-height,
-                100% $size-height,
-                100% calc(100% - $size-height),
-                100% calc(100% - $size-height),
-                calc(100% - $size-top) calc(100% - $size-height),
-                calc(100% - $size-bottom) 100%,
-                0 100%,
-            );
-            background: radial-gradient(
-                ellipse at center,
-                #4EFFDF 0%,
-                rgba(255,255,255,0) 100%
-            );
-            backdrop-filter: blur(10px);
-            z-index: 1;
+          background: linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 35%,
+            #58b9ff 71%,
+            #4bb7aa 89%
+          );
         }
 
-        &Pink::after {
-            background: radial-gradient(
-                ellipse at center,
-                rgba(255,114,224,0.4) 0%,
-                rgba(255,255,255,0) 100%
+        &:nth-child(1) {
+          &::after {
+            background: linear-gradient(
+              45deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(255, 255, 255, 1) 35%,
+              rgba(241, 163, 71, 1) 71%,
+              rgba(255, 114, 224, 1) 89%
             );
+          }
         }
+      }
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s;
+    transform: translateY(-50%) scale(1.1);
+    left: -112px;
+    display: inline-block;
+    width: 60px;
+    height: 95px;
+    background-image: url("/decor/white_left_border.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 5;
+
+    &_active {
+      background-image: url("/decor/color_left_border.png");
+    }
+  }
+
+  &__itemWrap {
+    position: relative;
+    width: 35vw;
+    padding: 4rem 3rem;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      display: block;
+      z-index: 0;
+      transition: 0.3s;
+      clip-path: polygon(
+        0 0,
+        $size-top 0,
+        $size-bottom $size-height,
+        100% $size-height,
+        100% calc(100% - $size-height),
+        100% calc(100% - $size-height),
+        calc(100% - $size-top) calc(100% - $size-height),
+        calc(100% - $size-bottom) 100%,
+        0 100%
+      );
+      background: radial-gradient(
+        ellipse at center,
+        #4effdf 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      backdrop-filter: blur(10px);
+      z-index: 1;
     }
 
-    &Content {
-        position: relative;
-        z-index: 2;
+    &_pink::after {
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 114, 224, 0.4) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
     }
+  }
 
-    &Number {
-        display: block;
-        font: 700 41px/1 "NeueMachina";
-        margin-bottom: 10px;
-    }
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
 
-    &Title {
-        font: 700 13px/1.2 "MazzardH";
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+  &__number {
+    display: block;
+    font: 700 41px/1 "NeueMachina";
+    margin-bottom: 10px;
+  }
 
-    &Text {
-        font: 700 13px/1.2 "MazzardH";
-    }
-}
+  &__title {
+    font: 700 13px/1.2 "MazzardH";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-.animatedImages {
+  &__text {
+    font: 700 13px/1.2 "MazzardH";
+  }
+
+  &__bg {
     position: absolute;
     inset: 0;
     z-index: 1;
+  }
 
-    &Item {
-        position: absolute;
-        inset: 0;
-        background-position: right bottom;
-        background-size: auto 80%;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity .3s;
+  &__image {
+    position: absolute;
+    inset: 0;
+    background-position: right bottom;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s;
 
-        &Active {
-            opacity: 1;
-        }
+    &_active {
+      opacity: 1;
     }
+  }
 }
