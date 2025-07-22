@@ -12,7 +12,7 @@ import { AnimatedMenu } from "@/components/AnimatedMenu";
 import { LogoList } from "@/components/LogoList";
 import { ArtObject } from "@/components/ArtObject";
 import { Copyright } from "@/components/Copyright";
-import { AlliesGallery } from "@/components/AlliesGallery";
+import { Gallery } from "@/components/Gallery";
 
 export default function Home() {
   return (
@@ -124,7 +124,7 @@ export default function Home() {
           </svg>
           TEAM
         </Title>
-        <AlliesGallery />
+        <Gallery />
       </section>
       <section className={cl(styles.section, styles.footer)}>
         <Logo />
