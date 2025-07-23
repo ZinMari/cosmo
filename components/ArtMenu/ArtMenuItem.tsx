@@ -18,18 +18,18 @@ interface ArtMenuItemProps {
 
 const getTypeById = (id:number):TypeArtButton => {
     if(id === 1) {
-      return 'YellowPink'
+      return 'yellowPink'
     }
 
     if(id === 2) {
-      return 'Blue'
+      return 'blue'
     }
 
     if(id === 3) {
-      return 'BluePurple'
+      return 'bluePurple'
     }
 
-    return 'GreenYellow'
+    return 'greenYellow'
 }
 
 export const ArtMenuItem: React.FC<ArtMenuItemProps> = ({
