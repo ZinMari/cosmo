@@ -3,6 +3,8 @@ import { ArtButton } from "../ArtButton";
 import { Text } from "../Text";
 
 import styles from "./style.module.scss";
+import { ModalInfo } from "@/src/constants/constants";
+import { GlassCard } from "../GlassCard";
 
 interface ModalProps {
   backgroundUrl: string;
@@ -10,8 +12,8 @@ interface ModalProps {
   onClickClose: () => void;
   onClickNext: () => void;
   title: string;
-  content: ReactNode;
-  scrollContent: ReactNode;
+  contentBlock: ReactNode;
+  listImages: ModalInfo["listImages"];
   isNext: boolean;
 }
 
@@ -21,8 +23,8 @@ export const Modal: React.FC<ModalProps> = ({
   onClickClose,
   onClickNext,
   title,
-  content,
-  scrollContent,
+  contentBlock,
+  listImages,
   isNext,
 }) => {
   useEffect(() => {
@@ -40,12 +42,12 @@ export const Modal: React.FC<ModalProps> = ({
         backgroundImage: `url(${backgroundUrl})`,
       }}
     >
-      <div className={styles.modalContainer}>
-        <header className={styles.modalHeader}>
+      <div className={styles.modal__container}>
+        <header className={styles.modal__header}>
           <ArtButton
             onClick={onClickClose}
             type="transparent"
-            className={styles.modalButton}
+            className={styles.modal__button}
           >
             Close
           </ArtButton>
@@ -53,7 +55,7 @@ export const Modal: React.FC<ModalProps> = ({
             <ArtButton
               onClick={onClickNext}
               type="white"
-              className={styles.modalButton}
+              className={styles.modal_button}
             >
               <span>Next</span>
               <svg
@@ -61,7 +63,7 @@ export const Modal: React.FC<ModalProps> = ({
                 height="12"
                 viewBox="0 0 26 12"
                 fill="none"
-                className={styles.modalArrow}
+                className={styles.modal__arrow}
               >
                 <path
                   d="M1 6H24.5M24.5 6L19.5 1M24.5 6L19.5 11"
@@ -77,12 +79,24 @@ export const Modal: React.FC<ModalProps> = ({
           style={{
             backgroundImage: `url(${titleUrl})`,
           }}
-          className={styles.modalTitle}
+          className={styles.modal__title}
         >
           {title}
         </h2>
-        <Text className={styles.modalText}>{content}</Text>
-        <div className={styles.modalContent}>{scrollContent}</div>
+        <Text className={styles.modal__text}>{contentBlock}</Text>
+        <div className={styles.modal__content}>
+          {/* <div className={styles.cardList}>{imageBlock}</div> */}
+          <div className={styles.modal__images}>
+            {listImages.map((item, id) => (
+              <GlassCard
+                key={id}
+                imgNumber={id + 1}
+                type={item.type}
+                imageUrl={item.src}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

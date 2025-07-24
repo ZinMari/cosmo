@@ -1,132 +1,119 @@
 .artMenu {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.8rem;
-    position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.8rem;
+  position: relative;
 
-    &::after {
-        content: '';
-        position: absolute;
-        right: 22px;
-        top: 2px;
-        width: 3px;
-        bottom: 2px;
-        background: white;
-        z-index: 0;
-    }
-
-    &Title {
-        cursor: pointer;
-    }
-
-    &Card {
-        margin-top: 0;
-        height: 0;
-        overflow: hidden;
-        transition: all 0.3s;
-        opacity: 0;
-    }
-
-    &Item {
-        display: block;
-        color: white;
-        text-decoration: none;
-        text-align: right;
-        font-family: "TTOctosquares", sans-serif;
-        font-size: 1.5714rem;
-        padding-right: 3.8rem;
-        position: relative;
-        z-index: 1;
-
-        &:visited,
-        &:hover {
-            color: white;
-        }
-
-        .artMenuDecorator {
-            background-image: url("/decor/white_left_border.png");
-        }
-
-        &:hover {
-            .artMenuDecorator {
-                background-image: url("/decor/color_left_border.png");
-            }
-        }
-
-        &:nth-child(odd){
-            .artMenuDecorator {
-                background-image: url("/decor/white_right_border.png");
-            }
-    
-            &:hover {
-                .artMenuDecorator {
-                    background-image: url("/decor/color_right_border.png");
-                }
-            }
-        }
-
-        &:last-child {
-            .artMenuDecorator {
-                top: auto;
-                bottom: -4px;
-            }  
-        }
-    }
-
-    &Decorator {
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: block;
-        width: 3rem;
-        height: 2.5rem;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        cursor: pointer;
-    }
-
-    &ItemActive {
-        .artMenuDecorator {
-            background-image: url("/decor/color_left_border.png");
-
-            &:nth-child(odd){
-                background-image: url("/decor/color_right_border.png");
-            }
-        }
-        .artMenuTitle {
-            text-transform: uppercase;
-        }
-        .artMenuCard{
-            opacity: 1;
-            height: 13.3571rem;
-            margin-top: 1.2rem;
-        }
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: 2px;
+    width: 3px;
+    bottom: 2px;
+    background: white;
+    z-index: 0;
+  }
 }
 
-.cardMore {
+.artMenuItem {
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-align: right;
+  font-family: "TTOctosquares", sans-serif;
+  font-size: 1.5714rem;
+  padding-right: 3.8rem;
+  position: relative;
+  z-index: 1;
+
+  &:visited,
+  &:hover {
+    color: white;
+  }
+
+  &_active {
+    .artMenuItem__decorator {
+      background-image: url("/decor/color_left_border.png");
+
+      &:nth-child(odd) {
+        background-image: url("/decor/color_right_border.png");
+      }
+    }
+    .artMenuItem__title {
+      text-transform: uppercase;
+    }
+    .artMenuItem__card {
+      opacity: 1;
+      height: 13.3571rem;
+      margin-top: 1.2rem;
+    }
+  }
+
+  &__decorator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 3rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    background-image: url("/decor/white_left_border.png");
+  }
+
+  &:hover {
+    .artMenuItem__decorator {
+      background-image: url("/decor/color_left_border.png");
+    }
+  }
+
+  &:nth-child(odd) {
+    .artMenuItem__decorator {
+      background-image: url("/decor/white_right_border.png");
+    }
+
+    &:hover {
+      .artMenuItem__decorator {
+        background-image: url("/decor/color_right_border.png");
+      }
+    }
+  }
+
+  &:last-child {
+    .artMenuItem__decorator {
+      top: auto;
+      bottom: -4px;
+    }
+  }
+
+  &__title {
+    cursor: pointer;
+  }
+
+  &__card {
+    margin-top: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    opacity: 0;
     position: relative;
     padding-left: 2.5em;
+  }
 
-    &Button {
-        left: 0;
-        top: 10%;
-        position: absolute;
+  &__button {
+    left: 0;
+    top: 10%;
+    position: absolute;
 
-        &:hover {
-            opacity: 0.8;
-        }
+    &:hover {
+      opacity: 0.8;
     }
+  }
 
-    &Image {
-        display: block;
-    }
-}
-
-.cardList {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(7, 90px);
-    gap: 30px;
+  &__image {
+    display: block;
+  }
 }

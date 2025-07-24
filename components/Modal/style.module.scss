@@ -1,58 +1,63 @@
 .modal {
-    position: fixed;
-    inset: 0;
-    background: #091419;
-    z-index: 999;
-    background-size: cover;
-    overflow-y: auto;
-  
-    &Title {
-      font-family: "TTOctosquares";
-      font-size: 6vw;
-      font-weight: 500;
-      line-height: 1.2;
-      max-width: 848px;
-      line-height: 1.4;
-      text-transform: uppercase;
-      background-repeat: no-repeat;
-      background-position: left center;
-      text-indent: -1234em;
-      margin: 30px 0 20px;
-      background-size: contain;
-    }
-  
-    &Text {
-      margin-bottom: 20px;
-    }
-  
-    &Header {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-  
-    &Container {
-      min-width: 900px;
-      padding: 50px;
-      box-sizing: border-box;
-      display: grid;
-      grid-template-rows: auto auto auto 1fr;
-      gap: 20px;
-    }
-  
-    &Content {
-      padding-bottom: 50px;
-    }
-  
-    &Button {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-  
-    &Arrow {
-      display: inline-block;
-      margin-left: 10px;
-    }
+  position: fixed;
+  inset: 0;
+  background: #091419;
+  z-index: 999;
+  background-size: cover;
+  overflow-y: auto;
+
+  &__container {
+    min-width: 900px;
+    padding: 50px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 20px;
   }
-  
-  
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &__title {
+    font-family: "TTOctosquares";
+    font-size: 6vw;
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 848px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-indent: -1234em;
+    margin: 30px 0 20px;
+    background-size: contain;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    padding-bottom: 50px;
+  }
+
+  &__arrow {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(7, 90px);
+    gap: 30px;
+  }
+}
