@@ -119,3 +119,24 @@ export const ANIMATED_MENU_ITEMS: AnimatedMenuItem[] = [
     imageUrl: "/animatedMenu/05.png",
   },
 ];
+
+export const SOCIAL_NETWORKS = [
+  {
+    id: 1,
+    title: "Discord",
+    className: "discord",
+    link: "https://discord.com/",
+  },
+  {
+    id: 2,
+    title: "Twitter",
+    className: "twitter",
+    link: "https://x.com/",
+  },
+  {
+    id: 3,
+    title: "AntDesign",
+    className: "antDesign",
+    link: "https://ant.design/",
+  },
+];

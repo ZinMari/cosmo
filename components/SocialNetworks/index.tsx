@@ -1,47 +1,25 @@
-import styles from './style.module.scss'
-import cl from 'classnames'
-
-
-const socialNetworks = [
-    {
-        id: 1,
-        title: 'Discord',
-        className: 'Discord',
-        link:  "https://discord.com/",
-    },
-    {
-        id: 2,
-        title: 'Twitter',
-        className: 'Twitter',
-        link:  "https://x.com/",
-    },
-    {
-        id: 3,
-        className: 'AntDesign',
-        title: 'AntDesign',
-        link:  "https://ant.design/",
-    },
-]
+import { SOCIAL_NETWORKS } from "@/src/constants/constants";
+import styles from "./style.module.scss";
+import cl from "classnames";
 
 export const SocialNetworks: React.FC = ({}) => {
-    return (
-        <ul className={styles.socialNetworks}>
-            {socialNetworks.map((socialNetwork) => (
-                <li
-                    key={socialNetwork.id}
-                    className={styles.socialNetworksItem}
-                >
-                    <a
-                        className= {cl(styles.socialNetworksLink, styles[`socialNetworks${socialNetwork.className}`])} 
-                        href={socialNetwork.link}
-                        target='_blank'
-                        rel='noreferrer'
-                    >
-                        {socialNetwork.title}
-                    </a>
-                </li>
-            ))}
-            <li></li>
-        </ul>
-    );
-}
+  return (
+    <ul className={styles.socialNetworks}>
+      {SOCIAL_NETWORKS.map((socialNetwork) => (
+        <li key={socialNetwork.id}>
+          <a
+            className={cl(
+              styles.socialNetworks__link,
+              styles[`socialNetworks__${socialNetwork.className}`]
+            )}
+            href={socialNetwork.link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {socialNetwork.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+};
