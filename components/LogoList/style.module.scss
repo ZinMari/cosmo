@@ -3,74 +3,71 @@ $size-top: 3rem;
 $size-bottom: 4.5rem;
 $size-border: 2px;
 
-.logo {
-    &List {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 50px;
+.logoList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+
+  &__item {
+    position: relative;
+    height: 113px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      display: block;
+      z-index: 0;
+      clip-path: polygon(
+        0 0,
+        $size-top 0,
+        $size-bottom $size-height,
+        100% $size-height,
+        100% calc(100% - $size-height),
+        100% calc(100% - $size-height),
+        calc(100% - $size-top) calc(100% - $size-height),
+        calc(100% - $size-bottom) 100%,
+        0 100%
+      );
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.6) 100%
+      );
+      backdrop-filter: blur(5px);
     }
+  }
 
-    &Item {
-        position: relative;
-        height: 113px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  &__text {
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    font: 700 25px/1 "TTOctosquares", sans-serif;
+  }
 
-        &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            display: block;
-            z-index: 0;
-            clip-path: polygon(
-                0 0,
-                $size-top 0,
-                $size-bottom $size-height,
-                100% $size-height,
-                100% calc(100% - $size-height),
-                100% calc(100% - $size-height),
-                calc(100% - $size-top) calc(100% - $size-height),
-                calc(100% - $size-bottom) 100%,
-                0 100%,
-            );
-            background: linear-gradient(
-                135deg,
-                rgba(255,255,255,0.2) 0%,
-                rgba(255,255,255,0.6) 100%
-            );
-            backdrop-filter: blur(5px);
-        }
+  &__angleLeft,
+  &__angleRight {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    transition: 0.3s;
+  }
 
-        &Text {
-            position: relative;
-            z-index: 1;
-            text-transform: uppercase;
-            font: 700 25px/1 "TTOctosquares", sans-serif;
-        }
+  &__angleLeft {
+    top: 16px;
+    right: 6px;
+    border-top: 15px solid white;
+    border-left: 15px solid transparent;
+  }
 
-        &AngleLeft,
-        &AngleRight {
-            position: absolute;
-            width: 0;
-            height: 0;
-            z-index: 1;
-            transition: .3s;
-        }
-
-        &AngleLeft {
-            top: 16px;
-            right: 6px;
-            border-top: 15px solid white;
-            border-left: 15px solid transparent;   
-        }
-
-        &AngleRight {
-            bottom: 7px;
-            left: 7px;
-            border-bottom: 15px solid white;
-            border-right: 15px solid transparent;
-        }
-    }
-   
+  &__angleRight {
+    bottom: 7px;
+    left: 7px;
+    border-bottom: 15px solid white;
+    border-right: 15px solid transparent;
+  }
 }

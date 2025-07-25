@@ -404,3 +404,10 @@ export const ART_MENU_LINKS: ArtMenuLinks[] = [
     },
   },
 ];
+
+export const LOGOS = [
+  { id: 1, title: "Logo" },
+  { id: 2, title: "Logo" },
+  { id: 3, title: "Logo" },
+  { id: 4, title: "Logo" },
+];

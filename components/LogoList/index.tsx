@@ -1,29 +1,21 @@
-import cl from 'classnames'
-import styles from './style.module.scss'
+import cl from "classnames";
+import styles from "./style.module.scss";
+import { LOGOS } from "@/src/constants/constants";
 
-interface LogoListProps{
-    className?: string;
+interface LogoListProps {
+  className?: string;
 }
 
-const logos = [
-    {id: 1, title: 'Logo'},
-    {id: 2, title: 'Logo'},
-    {id: 3, title: 'Logo'},
-    {id: 4, title: 'Logo'},
-]
-
-export function LogoList({
-    className
-}: LogoListProps ){
-    return (
-        <ul className={cl(className, styles.logoList)}>
-            {logos.map(({id, title})=> (
-                <li key={id} className={styles.logoItem}>
-                    <span className={styles.logoItemText}>{title}</span>
-                    <span className={styles.logoItemAngleLeft}/>
-                    <span className={styles.logoItemAngleRight}/>
-                </li>
-            ))}
-        </ul>
-    )
+export function LogoList({ className }: LogoListProps) {
+  return (
+    <ul className={cl(className, styles.logoList)}>
+      {LOGOS.map(({ id, title }) => (
+        <li key={id} className={styles.logoList__item}>
+          <span className={styles.logoList__text}>{title}</span>
+          <span className={styles.logoList__angleLeft} />
+          <span className={styles.logoList__angleRight} />
+        </li>
+      ))}
+    </ul>
+  );
 }
