@@ -411,3 +411,24 @@ export const LOGOS = [
   { id: 3, title: "Logo" },
   { id: 4, title: "Logo" },
 ];
+
+export const NAVIGATION_LINKS = [
+  {
+    id: 1,
+    title: "Home",
+    href: "/",
+    active: true,
+  },
+  {
+    id: 2,
+    title: "Factions",
+    href: "/",
+    active: false,
+  },
+  {
+    id: 3,
+    title: "Roadmap",
+    href: "/",
+    active: false,
+  },
+];
