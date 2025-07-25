@@ -1,27 +1,27 @@
 .title {
-    display: inline-flex;
-    flex-direction: column;
-    font: 700 15px/1.2em 'MazzardH';
-    text-transform: uppercase;
-    text-align: right;
-    gap: 0.1em;
+  display: inline-flex;
+  flex-direction: column;
+  font: 700 15px/1.2em "MazzardH";
+  text-transform: uppercase;
+  text-align: right;
+  gap: 0.1em;
 
-    &Text {
-        background-image: linear-gradient(to right, #FFB800, #FFBAC3);
-        background-clip: text;
-        color: transparent;
-        display: inline-block;
-        padding-right: 10px;
-        line-height: 1;
+  &__text {
+    background-image: linear-gradient(to right, #ffb800, #ffbac3);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    padding-right: 10px;
+    line-height: 1;
+  }
+
+  &_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title__text {
+      padding-right: 0;
     }
-
-    &Center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .titleText {
-            padding-right: 0;
-        }
-    }
+  }
 }
