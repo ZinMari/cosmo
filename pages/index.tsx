@@ -37,14 +37,14 @@ export default function Home() {
         </div>
       </section>
       <section className={cl(styles.section, styles.earth)}>
-        <Title size="Large">Factions</Title>
+        <Title size="large">Factions</Title>
         <ArtMenu></ArtMenu>
       </section>
       <section className={cl(styles.section, styles.animation)}>
         <ArtTitle type="up" className={styles.artTitle}>
           Our way
         </ArtTitle>
-        <Title size="Small" className={styles.smallTitle}>
+        <Title size="small" className={styles.smallTitle}>
           Road
           <svg width="39" height="39" viewBox="0 0 39 39" fill="none">
             <path
@@ -62,7 +62,7 @@ export default function Home() {
         <ArtTitle type="down" className={styles.artTitle}>
           Partners
         </ArtTitle>
-        <Title size="Small" className={styles.subTitle}>
+        <Title size="small" className={styles.subTitle}>
           COLLABORATIONS
         </Title>
         <LogoList className={styles.logos__list} />
@@ -72,7 +72,7 @@ export default function Home() {
           <ArtTitle type="down" className={styles.artTitle}>
             FAQ
           </ArtTitle>
-          <Title size="Small" className={styles.subTitle}>
+          <Title size="small" className={styles.subTitle}>
             HAVE
             <svg
               className={styles.question__star}
@@ -106,7 +106,7 @@ export default function Home() {
         <ArtTitle className={styles.artTitle} type="down">
           Members
         </ArtTitle>
-        <Title size="Medium" className={styles.subTitle}>
+        <Title size="medium" className={styles.subTitle}>
           MEET
           <br />
           OUR
