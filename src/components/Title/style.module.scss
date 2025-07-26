@@ -8,16 +8,16 @@
   &_size {
     &_medium {
       text-align: center;
-      font-size: 4.7143rem;
+      font-size: clamp(3.125rem, 2.7536rem + 1.5238vw, 4.125rem);
       margin-bottom: 1.4286rem;
     }
 
     &_large {
-      font-size: 5.7143rem;
+      font-size: clamp(2.5rem, 1.5714rem + 3.8095vw, 5rem);
     }
 
     &_small {
-      font-size: 3.8rem;
+      font-size: clamp(2.1875rem, 1.5143rem + 2.7619vw, 4rem);
       letter-spacing: 1vw;
     }
   }
