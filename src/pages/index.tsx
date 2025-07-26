@@ -1,18 +1,18 @@
-import styles from "@/styles/home.module.scss";
+import styles from "../styles/home.module.scss";
 import cl from "classnames";
 
-import { Logo } from "@/components/Logo";
-import { SocialNetworks } from "@/components/SocialNetworks";
-import { ArtButton } from "@/components/ArtButton";
-import { Navigation } from "@/components/Navigation";
-import { Title } from "@/components/Title";
-import { ArtMenu } from "@/components/ArtMenu";
-import { ArtTitle } from "@/components/ArtTitle";
-import { AnimatedMenu } from "@/components/AnimatedMenu";
-import { LogoList } from "@/components/LogoList";
-import { ArtObject } from "@/components/ArtObject";
-import { Copyright } from "@/components/Copyright";
-import { Gallery } from "@/components/Gallery";
+import { Logo } from "@/src/constants/components/Logo";
+import { SocialNetworks } from "@/src/constants/components/SocialNetworks";
+import { ArtButton } from "@/src/constants/components/ArtButton";
+import { Navigation } from "@/src/constants/components/Navigation";
+import { Title } from "@/src/constants/components/Title";
+import { ArtMenu } from "@/src/constants/components/ArtMenu";
+import { ArtTitle } from "@/src/constants/components/ArtTitle";
+import { AnimatedMenu } from "@/src/constants/components/AnimatedMenu";
+import { LogoList } from "@/src/constants/components/LogoList";
+import { ArtObject } from "@/src/constants/components/ArtObject";
+import { Copyright } from "@/src/constants/components/Copyright";
+import { Gallery } from "@/src/constants/components/Gallery";
 
 export default function Home() {
   return (
