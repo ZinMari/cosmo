@@ -1,7 +1,11 @@
+.container {
+  overflow-x: hidden;
+}
+
 .section {
   height: 100vh;
-  padding: 2.1429rem 6.8571rem;
-  box-sizing: border-box;
+  padding: clamp(1.25rem, 0.952vw + 1.018rem, 1.875rem)
+    clamp(1.563rem, 6.667vw - 0.063rem, 5.938rem);
   min-height: 600px;
 }
 
@@ -53,6 +57,7 @@
 }
 
 .earth {
+  justify-content: space-between;
   background: url("/bg/earth_2_bg.jpg") center no-repeat;
 }
 

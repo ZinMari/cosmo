@@ -16,7 +16,7 @@ import { Gallery } from "../components/Gallery";
 
 export default function Home() {
   return (
-    <article>
+    <article className={cl(styles.container)}>
       <section className={cl(styles.section, styles.main)}>
         <header className={styles.main__header}>
           <Logo />
