@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 .container {
   overflow-x: hidden;
 }
@@ -47,6 +49,17 @@
   }
 }
 
+.earth {
+  justify-content: space-between;
+  background: url("/bg/earth_2_bg.jpg") center no-repeat;
+
+  @media (max-width: vars.$screen) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+}
+
 .main,
 .earth {
   background-size: cover;
@@ -54,11 +67,6 @@
   align-items: center;
   padding-top: 7.1429rem;
   padding-bottom: 7.1429rem;
-}
-
-.earth {
-  justify-content: space-between;
-  background: url("/bg/earth_2_bg.jpg") center no-repeat;
 }
 
 .animation {
