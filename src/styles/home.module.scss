@@ -7,11 +7,16 @@
 .section {
   height: 100vh;
   padding: clamp(1.25rem, 0.952vw + 1.018rem, 1.875rem)
-    clamp(1.563rem, 6.667vw - 0.063rem, 5.938rem);
+    clamp(0.5rem, -1.5198rem + 8.2865vw, 5.938rem);
   min-height: 600px;
 }
 
 .main {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-top: 7.1429rem;
+  padding-bottom: 7.1429rem;
   position: relative;
   background: url("/bg/screen1_bg.jpg") center no-repeat;
 
@@ -50,23 +55,20 @@
 }
 
 .earth {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-top: 7.1429rem;
+  padding-bottom: 7.1429rem;
   justify-content: space-between;
   background: url("/bg/earth_2_bg.jpg") center no-repeat;
 
   @media (max-width: vars.$screen) {
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
     gap: 50px;
   }
-}
-
-.main,
-.earth {
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  padding-top: 7.1429rem;
-  padding-bottom: 7.1429rem;
 }
 
 .animation {

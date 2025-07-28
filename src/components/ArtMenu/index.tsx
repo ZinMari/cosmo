@@ -53,19 +53,7 @@ export const ArtMenu: React.FC = () => {
           titleUrl={modalInfo.titleUrl}
           title={modalInfo.title}
           contentBlock={modalInfo.content}
-          listImages={
-            modalInfo.listImages
-            // <div className={styles.cardList}>
-            //   {modalInfo.listImages.map((item, id) => (
-            //     <GlassCard
-            //       key={id}
-            //       imgNumber={id + 1}
-            //       type={item.type}
-            //       imageUrl={item.src}
-            //     />
-            //   ))}
-            // </div>
-          }
+          listImages={modalInfo.listImages}
         />
       )}
     </>
