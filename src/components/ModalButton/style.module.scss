@@ -1,0 +1,63 @@
+@use "../../styles/variables" as vars;
+.nextButtonMax {
+  &__arrow {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+.nextButtonMin {
+  &__arrow {
+    width: 50px;
+    display: inline-block;
+    margin-left: 10px;
+
+    path {
+      stroke: white;
+    }
+  }
+}
+
+.closeButtonMin {
+  width: 40px;
+  height: 40px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+.modalButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &_type {
+    &_max {
+      @media (max-width: vars.$smart) {
+        display: none;
+      }
+    }
+    &_min {
+      display: none;
+      position: relative;
+      background: transparent;
+      border: none;
+      @media (max-width: vars.$smart) {
+        display: block;
+      }
+    }
+  }
+}
