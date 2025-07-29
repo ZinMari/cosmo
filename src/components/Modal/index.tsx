@@ -5,6 +5,7 @@ import { Text } from "../Text";
 import styles from "./style.module.scss";
 import { ModalInfo } from "@/src/constants/constants";
 import { GlassCard } from "../GlassCard";
+import { ModalButton } from "../ModalButton";
 
 interface ModalProps {
   backgroundUrl: string;
@@ -44,36 +45,8 @@ export const Modal: React.FC<ModalProps> = ({
     >
       <div className={styles.modal__container}>
         <header className={styles.modal__header}>
-          <ArtButton
-            onClick={onClickClose}
-            type="transparent"
-            className={styles.modal__button}
-          >
-            Close
-          </ArtButton>
-          {isNext && (
-            <ArtButton
-              onClick={onClickNext}
-              type="white"
-              className={styles.modal_button}
-            >
-              <span>Next</span>
-              <svg
-                width="26"
-                height="12"
-                viewBox="0 0 26 12"
-                fill="none"
-                className={styles.modal__arrow}
-              >
-                <path
-                  d="M1 6H24.5M24.5 6L19.5 1M24.5 6L19.5 11"
-                  stroke="black"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </ArtButton>
-          )}
+          <ModalButton type="close" onClick={onClickClose} />
+          {isNext && <ModalButton type="next" onClick={onClickNext} />}
         </header>
         <h2
           style={{
@@ -85,7 +58,6 @@ export const Modal: React.FC<ModalProps> = ({
         </h2>
         <Text className={styles.modal__text}>{contentBlock}</Text>
         <div className={styles.modal__content}>
-          {/* <div className={styles.cardList}>{imageBlock}</div> */}
           <div className={styles.modal__images}>
             {listImages.map((item, id) => (
               <GlassCard
