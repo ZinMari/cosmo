@@ -62,9 +62,9 @@ export const Modal: React.FC<ModalProps> = ({
             {listImages.map((item, id) => (
               <GlassCard
                 key={id}
-                imgNumber={id + 1}
                 type={item.type}
                 imageUrl={item.src}
+                className={styles[`modal__image${id + 1}`]}
               />
             ))}
           </div>

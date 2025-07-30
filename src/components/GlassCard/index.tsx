@@ -6,21 +6,21 @@ import Image from "next/image";
 
 interface GlassCardProps {
   imageUrl: string;
+  className: string;
   type: "color" | "dark";
-  imgNumber: number;
 }
 
 export const GlassCard: React.FC<GlassCardProps> = ({
-  imgNumber,
   imageUrl,
   type,
+  className,
 }) => {
   return (
     <div
       className={cl(
+        className,
         styles.glassCard,
-        styles[`glassCard_type_${type}`],
-        styles[`glassCard__item${imgNumber}`]
+        styles[`glassCard_type_${type}`]
       )}
     >
       <Image
