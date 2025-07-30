@@ -18,6 +18,7 @@ interface AnimatedMenuItem {
 export interface ModalInfo {
   title: string;
   titleUrl: string;
+  titleUrl2?: string;
   content: ReactNode;
   coverImage: string;
   listImages: {
@@ -233,7 +234,8 @@ export const ART_MENU_LINKS: ArtMenuLinks[] = [
     active: false,
     modalInfo: {
       title: "Glacial Frontier",
-      titleUrl: "/images/glacial_frontier/title.png",
+      titleUrl: "/images/glacial_frontier/title_1.png",
+      titleUrl2: "/images/glacial_frontier/title_2.png",
       content: (
         <>
           <p>The home of everything warfare in Dusktopia</p>
@@ -290,7 +292,8 @@ export const ART_MENU_LINKS: ArtMenuLinks[] = [
     active: false,
     modalInfo: {
       title: "Sundered Grove",
-      titleUrl: "/images/sundered_grove/title.png",
+      titleUrl: "/images/sundered_grove/title_1.png",
+      titleUrl2: "/images/sundered_grove/title_2.png",
       content: (
         <>
           <p>Dusktopia’s last remaining sanctuary of peace</p>
@@ -351,7 +354,8 @@ export const ART_MENU_LINKS: ArtMenuLinks[] = [
     active: false,
     modalInfo: {
       title: "Sky Citadel",
-      titleUrl: "/images/sky_citadel/title.png",
+      titleUrl: "/images/sky_citadel/title_1.png",
+      titleUrl2: "/images/sky_citadel/title_2.png",
       content: (
         <>
           <p>These are where the apex predators in Dusktopia reside</p>

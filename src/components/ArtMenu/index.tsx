@@ -51,6 +51,7 @@ export const ArtMenu: React.FC = () => {
           onClickClose={() => setModalInfo(null)}
           onClickNext={() => setModalInfo(nextModalInfo)}
           titleUrl={modalInfo.titleUrl}
+          titleUrl2={modalInfo.titleUrl2}
           title={modalInfo.title}
           contentBlock={modalInfo.content}
           listImages={modalInfo.listImages}
