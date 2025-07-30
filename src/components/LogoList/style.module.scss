@@ -1,3 +1,5 @@
+@use "../../styles/variables" as vars;
+
 $size-height: 0.7rem;
 $size-top: 3rem;
 $size-bottom: 4.5rem;
@@ -8,6 +10,13 @@ $size-border: 2px;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
 
+  @media (max-width: vars.$tab) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: vars.$smart) {
+    max-width: 300px;
+    grid-template-columns: 1fr;
+  }
   &__item {
     position: relative;
     height: 113px;
