@@ -14,6 +14,10 @@
     display: grid;
     grid-template-rows: auto auto auto 1fr;
     gap: 20px;
+
+    @media (max-width: vars.$min-tab) {
+      padding: 15px;
+    }
   }
 
   &__header {
