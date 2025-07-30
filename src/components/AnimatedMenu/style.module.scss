@@ -148,6 +148,18 @@ $size-border: 2px;
           rgba(255, 255, 255, 0) 100%
         );
       }
+      &_blue::after {
+        background: radial-gradient(
+          ellipse at top right,
+          rgba(30, 87, 153, 1) 0%,
+          rgba(43, 165, 226, 0.57) 32%,
+          rgba(60, 171, 226, 0.54) 34%,
+          rgba(224, 224, 224, 0.48) 53%,
+          rgba(225, 225, 225, 0.47) 56%,
+          rgba(234, 234, 234, 0.36) 79%,
+          rgba(226, 226, 226, 0.25) 100%
+        );
+      }
     }
   }
 
