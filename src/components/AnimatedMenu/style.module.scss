@@ -6,49 +6,49 @@ $size-border: 2px;
 .animatedMenu {
   position: relative;
   z-index: 2;
-  padding-left: 85px;
 
   &::after {
     position: absolute;
     content: "";
-    top: 147px;
-    left: 0;
-    bottom: 100px;
-    width: 5px;
+    top: 80px;
+    left: 23px;
+    bottom: 120px;
+    width: 3px;
     background-color: #fff;
+    z-index: 0;
   }
 
   &__item {
-    display: inline-flex;
+    display: flex;
     position: relative;
+    padding-left: 85px;
 
     &:nth-child(odd) {
-      .animatedMenuDecor {
-        background-image: url("/decor/white_right_border.png");
+      .animatedMenu__decor {
+        background-image: url("/decor/white_left_border.png");
       }
     }
 
     &:hover {
-      .animatedMenuDecor {
-        background-image: url("/decor/color_left_border.png");
+      .animatedMenu__decor {
+        background-image: url("/decor/color_right_border.png");
       }
 
       &:nth-child(odd) {
-        .animatedMenuDecor {
-          background-image: url("/decor/color_right_border.png");
+        .animatedMenu__decor {
+          background-image: url("/decor/color_left_border.png");
         }
       }
     }
 
     &_active {
       .animatedMenu__decor {
-        background-image: url("/decor/color_left_border.png");
-        transform: scale(1);
+        background-image: url("/decor/color_right_border.png");
       }
 
       &:nth-child(odd) {
         .animatedMenu__decor {
-          background-image: url("/decor/color_right_border.png");
+          background-image: url("/decor/color_left_border.png");
         }
       }
 
@@ -84,21 +84,18 @@ $size-border: 2px;
 
   &__decor {
     position: absolute;
-    top: 50%;
-    transition: all 0.3s;
-    transform: translateY(-50%) scale(1.1);
-    left: -112px;
-    display: inline-block;
-    width: 60px;
-    height: 95px;
-    background-image: url("/decor/white_left_border.png");
-    background-size: contain;
+    top: 60px;
+    left: 0;
+    display: block;
+    width: 50px;
+    height: 85px;
     background-repeat: no-repeat;
-    z-index: 5;
-
-    &_active {
-      background-image: url("/decor/color_left_border.png");
-    }
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    background-image: url("/decor/white_right_border.png");
+    z-index: 1;
+    transition: 0.3s;
   }
 
   &__itemWrap {
