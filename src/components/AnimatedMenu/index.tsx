@@ -27,7 +27,7 @@ export const AnimatedMenu: React.FC<AnimatedMenuProps> = ({ className }) => {
             <div
               className={cl(
                 styles.animatedMenu__itemWrap,
-                activeItem === 0 && styles.animatedMenu__itemWrap_pink
+                activeItem === 0 && styles.animatedMenu__itemWrap_color_pink
               )}
               onClick={() => setActiveItem(index)}
             >

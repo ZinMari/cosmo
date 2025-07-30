@@ -1,3 +1,5 @@
+@use "../../styles/variables" as vars;
+
 $size-height: 1rem;
 $size-top: 5rem;
 $size-bottom: 7rem;
@@ -12,7 +14,7 @@ $size-border: 2px;
     content: "";
     top: 80px;
     left: 23px;
-    bottom: 120px;
+    bottom: 130px;
     width: 3px;
     background-color: #fff;
     z-index: 0;
@@ -100,11 +102,16 @@ $size-border: 2px;
 
   &__itemWrap {
     position: relative;
-    width: 35vw;
+    width: 100%;
+    max-width: 450px;
     padding: 4rem 3rem;
     margin-bottom: 50px;
     cursor: pointer;
     transition: transform 0.3s;
+
+    @media (max-width: vars.$min-tab) {
+      max-width: 250px;
+    }
 
     &::after {
       content: "";
@@ -133,12 +140,14 @@ $size-border: 2px;
       z-index: 1;
     }
 
-    &_pink::after {
-      background: radial-gradient(
-        ellipse at center,
-        rgba(255, 114, 224, 0.4) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
+    &_color {
+      &_pink::after {
+        background: radial-gradient(
+          ellipse at center,
+          rgba(255, 114, 224, 0.4) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
     }
   }
 
