@@ -12,13 +12,13 @@
 }
 
 .main {
-  background-size: cover;
   display: flex;
   align-items: center;
   padding-top: 7.1429rem;
   padding-bottom: 7.1429rem;
   position: relative;
   background: url("/bg/screen1_bg.jpg") center no-repeat;
+  background-size: cover;
 
   &__header {
     display: grid;
@@ -55,13 +55,13 @@
 }
 
 .earth {
-  background-size: cover;
   display: flex;
   align-items: center;
   padding-top: 7.1429rem;
   padding-bottom: 7.1429rem;
   justify-content: space-between;
   background: url("/bg/earth_2_bg.jpg") center no-repeat;
+  background-size: cover;
 
   @media (max-width: vars.$screen) {
     flex-direction: column;
