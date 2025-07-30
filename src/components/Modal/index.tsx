@@ -1,6 +1,6 @@
 import { useEffect, ReactNode } from "react";
-import { ArtButton } from "../ArtButton";
 import { Text } from "../Text";
+import cl from "classnames";
 
 import styles from "./style.module.scss";
 import { ModalInfo } from "@/src/constants/constants";
@@ -10,6 +10,7 @@ import { ModalButton } from "../ModalButton";
 interface ModalProps {
   backgroundUrl: string;
   titleUrl: string;
+  titleUrl2?: string;
   onClickClose: () => void;
   onClickNext: () => void;
   title: string;
@@ -21,6 +22,7 @@ interface ModalProps {
 export const Modal: React.FC<ModalProps> = ({
   backgroundUrl,
   titleUrl,
+  titleUrl2,
   onClickClose,
   onClickNext,
   title,
@@ -48,13 +50,26 @@ export const Modal: React.FC<ModalProps> = ({
           <ModalButton type="close" onClick={onClickClose} />
           {isNext && <ModalButton type="next" onClick={onClickNext} />}
         </header>
-        <h2
-          style={{
-            backgroundImage: `url(${titleUrl})`,
-          }}
-          className={styles.modal__title}
-        >
-          {title}
+        <h2 className={styles.modal__title}>
+          <span>
+            <img
+              className={cl({
+                [styles.modal__title_type_single]: !titleUrl2,
+                [styles.modal__title_type_first]: titleUrl2,
+              })}
+              src={titleUrl}
+              alt={title}
+            />
+          </span>
+          {titleUrl2 && (
+            <span>
+              <img
+                className={styles.modal__title_type_last}
+                src={titleUrl2}
+                alt=""
+              />
+            </span>
+          )}
         </h2>
         <Text className={styles.modal__text}>{contentBlock}</Text>
         <div className={styles.modal__content}>

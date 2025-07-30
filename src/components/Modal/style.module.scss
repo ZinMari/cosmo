@@ -23,18 +23,29 @@
   }
 
   &__title {
-    font-family: "TTOctosquares";
-    font-size: 6vw;
-    font-weight: 500;
-    line-height: 1.2;
-    max-width: 848px;
-    line-height: 1.4;
-    text-transform: uppercase;
-    background-repeat: no-repeat;
-    background-position: left center;
-    text-indent: -1234em;
-    margin: 30px 0 20px;
-    background-size: contain;
+    max-width: 100%;
+    display: flex;
+
+    &_type {
+      &_first,
+      &_last,
+      &_single {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: vars.$min-tab) {
+      flex-direction: column;
+      align-items: center;
+
+      &_type {
+        &_first,
+        &_last {
+          max-width: none;
+          max-height: clamp(4.375rem, 7.958vw + 2.435rem, 6.25rem);
+        }
+      }
+    }
   }
 
   &__text {
