@@ -17,10 +17,18 @@ $size-border: 2px;
   &__column {
     position: relative;
     z-index: 1;
+
+    &:not(:last-child) {
+      border-right: 3px solid #fff;
+    }
   }
 
   &__row {
     position: relative;
+
+    &:not(:last-child) {
+      border-bottom: 3px solid #fff;
+    }
 
     &_type {
       &_textSpace {
@@ -36,6 +44,10 @@ $size-border: 2px;
           justify-content: center;
           align-items: center;
           padding: 15px 0;
+
+          &:not(:last-child) {
+            border-right: 3px solid #fff;
+          }
         }
       }
 
@@ -49,6 +61,10 @@ $size-border: 2px;
           justify-content: center;
           align-items: center;
           padding: 15px 0;
+
+          &:not(:last-child) {
+            border-right: 3px solid #fff;
+          }
         }
       }
     }
