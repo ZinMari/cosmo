@@ -117,16 +117,12 @@ $size-border: 2px;
     font-weight: 700;
   }
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    inset: 0;
     background: rgba(255, 255, 255, 0.27);
     backdrop-filter: blur(5px);
-
     clip-path: polygon(
       0 0,
       $size-top 0,
@@ -137,6 +133,44 @@ $size-border: 2px;
       calc(100% - $size-top) calc(100% - $size-height),
       calc(100% - $size-bottom) 100%,
       0 100%
+    );
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    clip-path: polygon(
+      0 0,
+      $size-top 0,
+      $size-bottom $size-height,
+      100% $size-height,
+      100% calc(100% - $size-height),
+      100% calc(100% - $size-height),
+      calc(100% - $size-top) calc(100% - $size-height),
+      calc(100% - $size-bottom) 100%,
+      0 100%,
+      0 calc(100% - $size-border),
+      calc(100% - $size-bottom - $size-border) calc(100% - $size-border),
+      calc(100% - $size-border - $size-top)
+        calc(100% - $size-border - $size-height),
+      calc(100% - $size-border) calc(100% - $size-border - $size-height),
+      calc(100% - $size-border) calc($size-border + $size-height),
+      calc(
+          $size-top + $size-height + $size-border + $size-border + $size-border
+        )
+        calc($size-border + $size-height),
+      calc($size-top - $size-border) $size-border,
+      $size-border $size-border,
+      $size-border calc(100% - $size-border),
+      0 calc(100% - $size-border)
+    );
+    background: linear-gradient(
+      to left,
+      rgba(244, 244, 244, 1) 0%,
+      rgba(253, 253, 253, 0.2) 24%,
+      rgba(255, 255, 255, 1) 100%
     );
   }
 }
