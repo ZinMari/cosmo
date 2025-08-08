@@ -57,8 +57,8 @@ export const Gallery: React.FC<GalleryProps> = ({ className }) => {
         className={styles.gallery__drag}
         src="/gallery/drag_drag_drag.png"
         alt="Drag Drag Drag"
-        width={130}
-        height={130}
+        width={150}
+        height={150}
       />
     </div>
   );

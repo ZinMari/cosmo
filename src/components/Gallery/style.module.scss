@@ -163,8 +163,8 @@ $size-border: 2px;
 
   &__drag {
     position: absolute;
-    top: -52px;
-    right: 0;
+    top: 10%;
+    right: 20%;
     z-index: 5;
     pointer-events: none;
   }
