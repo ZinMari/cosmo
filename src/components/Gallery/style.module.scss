@@ -74,7 +74,7 @@ $size-border: 2px;
       }
 
       .gallery__nickname {
-        font-size: 35px;
+        font-size: clamp(1.5rem, 0.7165rem + 1.6345vw, 2.1875rem);
       }
 
       .gallery__description {
