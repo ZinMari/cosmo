@@ -30,6 +30,15 @@
     left: 2.8571rem;
     right: 2.8571rem;
     z-index: 9;
+
+    @media (max-width: vars.$min-tab) {
+    }
+  }
+
+  &__whitepaper {
+    @media (max-width: vars.$min-tab) {
+      display: none;
+    }
   }
 
   &__navigation {

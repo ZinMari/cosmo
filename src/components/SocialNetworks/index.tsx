@@ -2,7 +2,13 @@ import { SOCIAL_NETWORKS } from "@/src/constants/constants";
 import styles from "./style.module.scss";
 import cl from "classnames";
 
-export const SocialNetworks: React.FC = ({}) => {
+interface SocialNetworksProps {
+  className?: string;
+}
+
+export const SocialNetworks: React.FC<SocialNetworksProps> = ({
+  className,
+}) => {
   return (
     <ul className={styles.socialNetworks}>
       {SOCIAL_NETWORKS.map((socialNetwork) => (
@@ -10,7 +16,8 @@ export const SocialNetworks: React.FC = ({}) => {
           <a
             className={cl(
               styles.socialNetworks__link,
-              styles[`socialNetworks__${socialNetwork.className}`]
+              styles[`socialNetworks__${socialNetwork.className}`],
+              className
             )}
             href={socialNetwork.link}
             target="_blank"

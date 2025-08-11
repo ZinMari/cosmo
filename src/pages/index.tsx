@@ -20,8 +20,10 @@ export default function Home() {
       <section className={cl(styles.section, styles.main)}>
         <header className={styles.main__header}>
           <Logo />
-          <SocialNetworks />
-          <ArtButton onClick={() => {}}>Whitepaper</ArtButton>
+          <SocialNetworks className={styles.main__social} />
+          <ArtButton className={styles.main__whitepaper} onClick={() => {}}>
+            Whitepaper
+          </ArtButton>
           <Navigation className={styles.main__navigation} />
         </header>
         <div className={styles.main__content}>
