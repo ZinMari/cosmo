@@ -1,3 +1,5 @@
+@use "../../styles/variables" as vars;
+
 $size-height: 0.7rem;
 $size-top: 3rem;
 $size-bottom: 4.5rem;
@@ -20,6 +22,10 @@ $size-border: 2px;
     scroll-snap-type: x mandatory;
     margin-right: -7rem;
     font: 400 15px "MazzardH", sans-serif;
+
+    @media (max-width: vars.$tab) {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -82,6 +88,10 @@ $size-border: 2px;
         transform: scaleX(1);
       }
     }
+
+    @media (max-width: vars.$tab) {
+      max-width: 600px;
+    }
   }
 
   &__person {
@@ -109,8 +119,8 @@ $size-border: 2px;
     position: absolute;
     left: 100%;
     bottom: $size-height;
-    width: 40vw;
-    padding: 25px 30px;
+    width: 50vw;
+    padding: 15px 30px;
     color: #fff;
     transition: transform 0.3s opacity 0.3s;
     transform: scaleX(0);
