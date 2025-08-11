@@ -22,8 +22,8 @@ export default function Home() {
           <Logo />
           <SocialNetworks />
           <ArtButton onClick={() => {}}>Whitepaper</ArtButton>
+          <Navigation className={styles.main__navigation} />
         </header>
-        <Navigation />
         <div className={styles.main__content}>
           <Title>from dusk to&nbsp;dawn</Title>
           <ul className={styles.main__buttonList}>

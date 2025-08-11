@@ -1,12 +1,9 @@
 .navigation {
-  position: fixed;
-  left: 2.9rem;
   font: 700 1.1429rem/1 "NeueMachina", sans-serif;
   display: flex;
   align-items: center;
   gap: 3vh;
   writing-mode: vertical-rl;
-  z-index: 9;
 
   &__link {
     color: white;

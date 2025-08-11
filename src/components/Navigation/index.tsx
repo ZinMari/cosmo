@@ -4,9 +4,13 @@ import styles from "./style.module.scss";
 import { Fragment } from "react";
 import { NAVIGATION_LINKS } from "@/src/constants/constants";
 
-export const Navigation: React.FC = () => {
+interface NavigationProps {
+  className?: string;
+}
+
+export const Navigation: React.FC<NavigationProps> = ({ className }) => {
   return (
-    <nav className={styles.navigation}>
+    <nav className={cl(styles.navigation, className)}>
       {NAVIGATION_LINKS.map((link, id) => (
         <Fragment key={link.id}>
           <Link
