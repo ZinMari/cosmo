@@ -13,8 +13,14 @@ import { LogoList } from "../components/LogoList";
 import { ArtObject } from "../components/ArtObject";
 import { Copyright } from "../components/Copyright";
 import { Gallery } from "../components/Gallery";
+import { Burger } from "../components/Burger";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  function onClickBurger() {
+    setIsMenuOpen(!isMenuOpen);
+  }
   return (
     <article className={cl(styles.container)}>
       <section className={cl(styles.section, styles.main)}>
@@ -25,6 +31,9 @@ export default function Home() {
             Whitepaper
           </ArtButton>
           <Navigation className={styles.main__navigation} />
+          <div className={styles.main__burger}>
+            <Burger isOpen={isMenuOpen} onClick={onClickBurger} />
+          </div>
         </header>
         <div className={styles.main__content}>
           <Title>from dusk to&nbsp;dawn</Title>

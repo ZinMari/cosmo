@@ -77,6 +77,12 @@
     }
   }
 
+  &__burger {
+    position: absolute;
+    top: 30px;
+    right: 0;
+  }
+
   &__buttonList {
     display: flex;
     justify-content: center;
