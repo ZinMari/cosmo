@@ -1,9 +1,17 @@
+@use "../../styles/variables" as vars;
+
 .navigation {
   font: 700 1.1429rem/1 "NeueMachina", sans-serif;
   display: flex;
   align-items: center;
   gap: 3vh;
   writing-mode: vertical-rl;
+
+  @media (max-width: vars.$min-tab) {
+    flex-direction: column;
+    writing-mode: horizontal-tb;
+    font-size: 30px;
+  }
 
   &__link {
     color: white;
