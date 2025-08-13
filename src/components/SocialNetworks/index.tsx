@@ -10,14 +10,13 @@ export const SocialNetworks: React.FC<SocialNetworksProps> = ({
   className,
 }) => {
   return (
-    <ul className={styles.socialNetworks}>
+    <ul className={cl(styles.socialNetworks, className)}>
       {SOCIAL_NETWORKS.map((socialNetwork) => (
         <li key={socialNetwork.id}>
           <a
             className={cl(
               styles.socialNetworks__link,
-              styles[`socialNetworks__${socialNetwork.className}`],
-              className
+              styles[`socialNetworks__${socialNetwork.className}`]
             )}
             href={socialNetwork.link}
             target="_blank"
