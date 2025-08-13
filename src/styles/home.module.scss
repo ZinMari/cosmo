@@ -32,6 +32,22 @@
     z-index: 9;
 
     @media (max-width: vars.$min-tab) {
+      position: fixed;
+      inset: 0;
+      grid-template-columns: 1fr;
+      background-image: radial-gradient(
+          ellipse at center,
+          rgba(85, 45, 57, 0.5) 0%,
+          rgba(25, 16, 19, 0.5) 100%
+        ),
+        url("../../public/bg/screen_art_object.png"),
+        radial-gradient(
+          ellipse at center,
+          rgba(85, 45, 57, 1) 0%,
+          rgba(25, 16, 19, 1) 100%
+        );
+      // background-size: cover;
+      background-position: center;
     }
   }
 
@@ -47,6 +63,18 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 9;
+
+    @media (max-width: vars.$min-tab) {
+      position: static;
+      transform: none;
+    }
+  }
+
+  &__social {
+    @media (max-width: vars.$min-tab) {
+      justify-self: center;
+      grid-row: 3 / 4;
+    }
   }
 
   &__buttonList {
