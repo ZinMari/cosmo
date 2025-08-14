@@ -24,7 +24,9 @@ $size-border: 2px;
     font: 400 15px "MazzardH", sans-serif;
 
     @media (max-width: vars.$tab) {
+      max-width: 100%;
       flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -56,11 +58,13 @@ $size-border: 2px;
       .gallery__description {
         opacity: 1;
         transform: scaleX(1);
+        height: auto;
       }
     }
   }
 
   &__wrap {
+    position: relative;
     padding: 20px 10px;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -69,8 +73,8 @@ $size-border: 2px;
 
     &::before {
       content: "";
-      position: absolute;
       inset: 0;
+      position: absolute;
       backdrop-filter: blur(5px);
       clip-path: polygon(
         0 0,
@@ -97,6 +101,7 @@ $size-border: 2px;
 
     @media (max-width: vars.$tab) {
       max-width: 600px;
+      margin: 0 auto;
     }
   }
 
@@ -123,7 +128,7 @@ $size-border: 2px;
   &__description {
     opacity: 0;
     position: absolute;
-    left: 100%;
+    left: calc(100% - $size-border);
     bottom: $size-height;
     width: 50vw;
     padding: 15px 30px;
@@ -131,6 +136,14 @@ $size-border: 2px;
     transition: transform 0.3s opacity 0.3s;
     transform: scaleX(0);
     transform-origin: 0 center;
+
+    @media (max-width: vars.$tab) {
+      height: 0;
+      position: static;
+      max-width: 600px;
+      width: auto;
+      margin: -12px auto 0;
+    }
 
     strong {
       font-weight: 700;
@@ -165,7 +178,9 @@ $size-border: 2px;
         calc(100% - 65px - $size-border) calc(100% - $size-border),
         calc(100% - $size-border) calc(100% - $size-border - 25px),
         calc(100% - $size-border) $size-border,
-        0 $size-border
+        $size-border $size-border,
+        $size-border calc(100% - $size-border),
+        0 calc(100% - $size-border)
       );
       background: #fff;
     }
@@ -175,6 +190,11 @@ $size-border: 2px;
     position: absolute;
     top: -15px;
     right: 40px;
+
+    @media (max-width: vars.$tab) {
+      top: 87%;
+      right: 100px;
+    }
   }
 
   &__drag {
@@ -183,5 +203,9 @@ $size-border: 2px;
     right: 20%;
     z-index: 5;
     pointer-events: none;
+
+    @media (max-width: vars.$tab) {
+      display: none;
+    }
   }
 }
