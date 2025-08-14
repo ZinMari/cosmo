@@ -55,11 +55,14 @@
     left: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 9;
+    z-index: 5;
 
     @media (max-width: vars.$min-tab) {
       position: absolute;
-      inset: 0;
+      width: 100%;
+      height: 100%;
+      top: -100%;
+      left: 0;
       transform: none;
       background-image: radial-gradient(
           ellipse at center,
@@ -74,14 +77,27 @@
         );
       background-position: center;
       justify-content: center;
+      transition: 0.3s;
+
+      &_open {
+        top: 0;
+      }
     }
   }
 
   &__social {
     @media (max-width: vars.$min-tab) {
-      justify-self: center;
-      grid-row: 3 / 4;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 10;
+      transition: 0.3s;
+
+      &_open {
+        bottom: 25px;
+        transition-delay: 0.5s;
+      }
     }
   }
 
