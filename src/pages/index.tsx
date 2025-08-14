@@ -25,7 +25,7 @@ export default function Home() {
     <article className={cl(styles.container)}>
       <section className={cl(styles.section, styles.main)}>
         <header className={styles.main__header}>
-          <Logo />
+          <Logo className={styles.main__logo} />
           <SocialNetworks className={styles.main__social} />
           <ArtButton className={styles.main__whitepaper} onClick={() => {}}>
             Whitepaper
