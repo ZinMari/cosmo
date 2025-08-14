@@ -23,6 +23,11 @@ export default function Home() {
   }
   return (
     <article className={cl(styles.container)}>
+      <Navigation
+        className={cl(styles.navigation, {
+          [styles.main__navigation_open]: isMenuOpen,
+        })}
+      />
       <section className={cl(styles.section, styles.main)}>
         <header className={styles.main__header}>
           <Logo className={styles.main__logo} />
@@ -34,11 +39,6 @@ export default function Home() {
           <ArtButton className={styles.main__whitepaper} onClick={() => {}}>
             Whitepaper
           </ArtButton>
-          <Navigation
-            className={cl(styles.main__navigation, {
-              [styles.main__navigation_open]: isMenuOpen,
-            })}
-          />
           <div className={styles.main__burger}>
             <Burger isOpen={isMenuOpen} onClick={onClickBurger} />
           </div>
