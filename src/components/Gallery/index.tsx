@@ -21,19 +21,23 @@ export const Gallery: React.FC<GalleryProps> = ({ className }) => {
             className={cl(styles.gallery__item, {
               [styles.gallery__item_active]: activeIndex === index,
             })}
-            onClick={() => setActiveIndex(index)}
-            key={index}
           >
-            <div className={cl(styles.gallery__person)}>
-              <img
-                className={cl(styles.gallery__image)}
-                src={item.imageUrl}
-                alt={item.title}
-              />
-            </div>
-            <div className={cl(styles.gallery__info)}>
-              <p className={cl(styles.gallery__position)}>{item.position}</p>
-              <p className={cl(styles.gallery__nickname)}>{item.title}</p>
+            <div
+              className={cl(styles.gallery__wrap)}
+              onClick={() => setActiveIndex(index)}
+              key={index}
+            >
+              <div className={cl(styles.gallery__person)}>
+                <img
+                  className={cl(styles.gallery__image)}
+                  src={item.imageUrl}
+                  alt={item.title}
+                />
+              </div>
+              <div className={cl(styles.gallery__info)}>
+                <p className={cl(styles.gallery__position)}>{item.position}</p>
+                <p className={cl(styles.gallery__nickname)}>{item.title}</p>
+              </div>
             </div>
             <div className={cl(styles.gallery__description)}>
               <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
