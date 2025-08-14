@@ -25,7 +25,7 @@ export default function Home() {
     <article className={cl(styles.container)}>
       <Navigation
         className={cl(styles.navigation, {
-          [styles.main__navigation_open]: isMenuOpen,
+          [styles.navigation_open]: isMenuOpen,
         })}
       />
       <section className={cl(styles.section, styles.main)}>

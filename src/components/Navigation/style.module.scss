@@ -8,9 +8,23 @@
   writing-mode: vertical-rl;
 
   @media (max-width: vars.$min-tab) {
+    justify-content: center;
     flex-direction: column;
     writing-mode: horizontal-tb;
     font-size: 30px;
+    background-image: radial-gradient(
+        ellipse at center,
+        rgba(85, 45, 57, 0.5) 0%,
+        rgba(25, 16, 19, 0.5) 100%
+      ),
+      url("../../../public/bg/screen_art_object.png"),
+      radial-gradient(
+        ellipse at center,
+        rgba(85, 45, 57, 1) 0%,
+        rgba(25, 16, 19, 1) 100%
+      );
+    background-position: center;
+    transition: 0.3s;
   }
 
   &__link {
