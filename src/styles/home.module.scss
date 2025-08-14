@@ -51,28 +51,21 @@
 
     @media (max-width: vars.$min-tab) {
       position: fixed;
-      inset: 0;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr auto;
-      padding: 25px;
+      left: 25px;
+      z-index: 10;
     }
-  }
-
-  &__logo {
-    z-index: 10;
   }
 
   &__social {
     @media (max-width: vars.$min-tab) {
-      position: absolute;
-      bottom: 100%;
+      position: fixed;
+      top: -100%;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 10;
       transition: 0.3s;
 
       &_open {
-        bottom: 25px;
+        top: calc(100% - 50px);
         transition-delay: 0.5s;
       }
     }

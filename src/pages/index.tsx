@@ -30,7 +30,7 @@ export default function Home() {
       />
       <section className={cl(styles.section, styles.main)}>
         <header className={styles.main__header}>
-          <Logo className={styles.main__logo} />
+          <Logo />
           <SocialNetworks
             className={cl(styles.main__social, {
               [styles.main__social_open]: isMenuOpen,
