@@ -78,10 +78,6 @@
   }
 
   &__burger {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    z-index: 10;
     display: none;
 
     @media (max-width: vars.$min-tab) {
