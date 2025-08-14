@@ -26,11 +26,19 @@ export default function Home() {
       <section className={cl(styles.section, styles.main)}>
         <header className={styles.main__header}>
           <Logo className={styles.main__logo} />
-          <SocialNetworks className={styles.main__social} />
+          <SocialNetworks
+            className={cl(styles.main__social, {
+              [styles.main__social_open]: isMenuOpen,
+            })}
+          />
           <ArtButton className={styles.main__whitepaper} onClick={() => {}}>
             Whitepaper
           </ArtButton>
-          <Navigation className={styles.main__navigation} />
+          <Navigation
+            className={cl(styles.main__navigation, {
+              [styles.main__navigation_open]: isMenuOpen,
+            })}
+          />
           <div className={styles.main__burger}>
             <Burger isOpen={isMenuOpen} onClick={onClickBurger} />
           </div>
