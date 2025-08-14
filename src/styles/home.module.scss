@@ -20,6 +20,10 @@
   background: url("/bg/screen1_bg.jpg") center no-repeat;
   background-size: cover;
 
+  &__logo {
+    z-index: 10;
+  }
+
   &__header {
     display: grid;
     grid-template-columns: 1fr auto auto;
@@ -35,19 +39,8 @@
       position: fixed;
       inset: 0;
       grid-template-columns: 1fr;
-      background-image: radial-gradient(
-          ellipse at center,
-          rgba(85, 45, 57, 0.5) 0%,
-          rgba(25, 16, 19, 0.5) 100%
-        ),
-        url("../../public/bg/screen_art_object.png"),
-        radial-gradient(
-          ellipse at center,
-          rgba(85, 45, 57, 1) 0%,
-          rgba(25, 16, 19, 1) 100%
-        );
-      // background-size: cover;
-      background-position: center;
+      grid-template-rows: auto 1fr auto;
+      padding: 25px;
     }
   }
 
@@ -65,8 +58,22 @@
     z-index: 9;
 
     @media (max-width: vars.$min-tab) {
-      position: static;
+      position: absolute;
+      inset: 0;
       transform: none;
+      background-image: radial-gradient(
+          ellipse at center,
+          rgba(85, 45, 57, 0.5) 0%,
+          rgba(25, 16, 19, 0.5) 100%
+        ),
+        url("../../public/bg/screen_art_object.png"),
+        radial-gradient(
+          ellipse at center,
+          rgba(85, 45, 57, 1) 0%,
+          rgba(25, 16, 19, 1) 100%
+        );
+      background-position: center;
+      justify-content: center;
     }
   }
 
@@ -74,13 +81,15 @@
     @media (max-width: vars.$min-tab) {
       justify-self: center;
       grid-row: 3 / 4;
+      z-index: 10;
     }
   }
 
   &__burger {
     position: absolute;
-    top: 30px;
-    right: 0;
+    top: 25px;
+    right: 25px;
+    z-index: 10;
   }
 
   &__buttonList {
