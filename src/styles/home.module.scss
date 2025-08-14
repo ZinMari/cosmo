@@ -58,12 +58,12 @@
     z-index: 5;
 
     @media (max-width: vars.$min-tab) {
+      transform: none;
       position: absolute;
       width: 100%;
       height: 100%;
       top: -100%;
       left: 0;
-      transform: none;
       background-image: radial-gradient(
           ellipse at center,
           rgba(85, 45, 57, 0.5) 0%,
@@ -106,6 +106,11 @@
     top: 25px;
     right: 25px;
     z-index: 10;
+    display: none;
+
+    @media (max-width: vars.$min-tab) {
+      display: block;
+    }
   }
 
   &__buttonList {
