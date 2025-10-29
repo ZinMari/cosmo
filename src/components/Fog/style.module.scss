@@ -1,0 +1,27 @@
+.fog {
+  max-width: 100%;
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    filter: blur(2px);
+    animation: fog calc(5s * var(--stork)) linear infinite alternate;
+  }
+}
+
+@keyframes fog {
+  0% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  20%,
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(3);
+  }
+}
