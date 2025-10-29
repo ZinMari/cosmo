@@ -15,6 +15,7 @@ import { Copyright } from "../components/Copyright";
 import { Gallery } from "../components/Gallery";
 import { Burger } from "../components/Burger";
 import { useState } from "react";
+import Fog from "../components/Fog";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,6 +30,7 @@ export default function Home() {
         })}
       />
       <section className={cl(styles.section, styles.main)}>
+        <Fog className={styles.main__fog} />
         <header className={styles.main__header}>
           <Logo />
           <SocialNetworks

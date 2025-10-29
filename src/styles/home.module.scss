@@ -41,6 +41,12 @@
   background: url("/bg/screen1_bg.jpg") center no-repeat;
   background-size: cover;
   height: 100vh;
+  overflow: hidden;
+
+  &__fog {
+    position: absolute;
+    inset: 0;
+  }
 
   &__header {
     width: 100%;
