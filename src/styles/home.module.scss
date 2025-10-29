@@ -128,6 +128,7 @@
 }
 
 .earth {
+  position: relative;
   display: flex;
   align-items: center;
   padding-top: 7.1429rem;
@@ -141,6 +142,12 @@
     justify-content: center;
     align-items: flex-end;
     gap: 50px;
+  }
+
+  &__fog {
+    position: absolute;
+    inset: 0;
+    filter: brightness(20%) drop-shadow(20px 4px rgb(206, 58, 125));
   }
 }
 

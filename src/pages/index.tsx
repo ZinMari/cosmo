@@ -58,6 +58,7 @@ export default function Home() {
         </div>
       </section>
       <section className={cl(styles.section, styles.earth)}>
+        <Fog className={styles.earth__fog} />
         <Title size="large">Factions</Title>
         <ArtMenu></ArtMenu>
       </section>
