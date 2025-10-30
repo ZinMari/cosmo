@@ -30,7 +30,10 @@ export default function Home() {
         })}
       />
       <section className={cl(styles.section, styles.main)}>
-        <Fog className={styles.main__fog} />
+        <div className={styles.main__fog}>
+          <Fog />
+        </div>
+
         <header className={styles.main__header}>
           <Logo />
           <SocialNetworks
@@ -58,7 +61,9 @@ export default function Home() {
         </div>
       </section>
       <section className={cl(styles.section, styles.earth)}>
-        <Fog className={styles.earth__fog} />
+        <div className={styles.earth__fog}>
+          <Fog />
+        </div>
         <Title size="large">Factions</Title>
         <ArtMenu></ArtMenu>
       </section>
